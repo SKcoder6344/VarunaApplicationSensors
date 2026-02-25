@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme -->
+    <style name="Theme.Varuna" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="colorSecondaryVariant">@color/colorSecondary</item>
+        <item name="colorOnSecondary">@color/colorOnPrimary</item>
+        <item name="android:statusBarColor">@color/colorPrimaryDark</item>
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <!-- Splash theme -->
+    <style name="Theme.Varuna.Splash" parent="Theme.Varuna">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+    </style>
+
+    <!-- Material Card Style -->
+    <style name="VarunaCard" parent="Widget.MaterialComponents.CardView">
+        <item name="cardElevation">4dp</item>
+        <item name="cardCornerRadius">12dp</item>
+        <item name="android:layout_margin">8dp</item>
+    </style>
+
+    <!-- Primary Button Style -->
+    <style name="VarunaButton" parent="Widget.MaterialComponents.Button">
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="backgroundTint">@color/colorPrimary</item>
+    </style>
+
+    <!-- Outlined Button Style -->
+    <style name="VarunaButtonOutlined" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="cornerRadius">8dp</item>
+        <item name="android:textSize">14sp</item>
+        <item name="strokeColor">@color/colorPrimary</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <!-- Text Input Layout Style -->
+    <style name="VarunaInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="boxCornerRadiusTopStart">8dp</item>
+        <item name="boxCornerRadiusTopEnd">8dp</item>
+        <item name="boxCornerRadiusBottomStart">8dp</item>
+        <item name="boxCornerRadiusBottomEnd">8dp</item>
+        <item name="boxStrokeColor">@color/colorPrimary</item>
+        <item name="hintTextColor">@color/colorPrimary</item>
+    </style>
+
+    <!-- Status Safe Card -->
+    <style name="VarunaCard.Safe">
+        <item name="cardBackgroundColor">@color/colorSafeLight</item>
+    </style>
+
+    <!-- Status Moderate Card -->
+    <style name="VarunaCard.Moderate">
+        <item name="cardBackgroundColor">@color/colorModerateLight</item>
+    </style>
+
+    <!-- Status Unsafe Card -->
+    <style name="VarunaCard.Unsafe">
+        <item name="cardBackgroundColor">@color/colorUnsafeLight</item>
+    </style>
+
+</resources>

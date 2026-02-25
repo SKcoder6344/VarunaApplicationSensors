@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Brand Colors - Water/Ocean Theme -->
+    <color name="colorPrimary">#1565C0</color>
+    <color name="colorPrimaryDark">#0D47A1</color>
+    <color name="colorPrimaryLight">#42A5F5</color>
+    <color name="colorAccent">#00BCD4</color>
+    <color name="colorSecondary">#0097A7</color>
+
+    <!-- Status Colors -->
+    <color name="colorSafe">#2E7D32</color>
+    <color name="colorSafeLight">#E8F5E9</color>
+    <color name="colorModerate">#F57F17</color>
+    <color name="colorModerateLight">#FFF8E1</color>
+    <color name="colorUnsafe">#B71C1C</color>
+    <color name="colorUnsafeLight">#FFEBEE</color>
+
+    <!-- Alert Severity -->
+    <color name="colorHighSeverity">#D32F2F</color>
+    <color name="colorMediumSeverity">#F9A825</color>
+    <color name="colorLowSeverity">#388E3C</color>
+
+    <!-- Neutral -->
+    <color name="colorBackground">#F5F7FA</color>
+    <color name="colorSurface">#FFFFFF</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorTextPrimary">#1A1A2E</color>
+    <color name="colorTextSecondary">#6B7280</color>
+    <color name="colorDivider">#E0E0E0</color>
+
+    <!-- Chart Colors -->
+    <color name="chartBlue">#1565C0</color>
+    <color name="chartGreen">#2E7D32</color>
+    <color name="chartOrange">#F57F17</color>
+    <color name="chartRed">#B71C1C</color>
+</resources>

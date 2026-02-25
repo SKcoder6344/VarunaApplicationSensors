@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="@color/colorBackground">
+    <com.google.android.material.appbar.MaterialToolbar android:id="@+id/toolbar"
+        android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary" app:titleTextColor="@android:color/white" />
+    <HorizontalScrollView android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:paddingStart="8dp" android:paddingEnd="8dp" android:paddingTop="8dp"
+        android:paddingBottom="4dp" android:background="@color/colorSurface">
+        <com.google.android.material.chip.ChipGroup android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <com.google.android.material.chip.Chip android:id="@+id/chip_wqi_help"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="What is WQI?" style="@style/Widget.MaterialComponents.Chip.Action" />
+            <com.google.android.material.chip.Chip android:id="@+id/chip_purification"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Purification" style="@style/Widget.MaterialComponents.Chip.Action" />
+            <com.google.android.material.chip.Chip android:id="@+id/chip_disease_risk"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Disease Risk" style="@style/Widget.MaterialComponents.Chip.Action" />
+            <com.google.android.material.chip.Chip android:id="@+id/chip_who_standards"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="WHO Standards" style="@style/Widget.MaterialComponents.Chip.Action" />
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_chat"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:padding="8dp" android:clipToPadding="false" />
+    <ProgressBar android:id="@+id/progress_bar" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_gravity="center"
+        android:visibility="gone" />
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:padding="8dp"
+        android:background="@color/colorSurface" android:gravity="center_vertical">
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp"
+            android:layout_height="wrap_content" android:layout_weight="1"
+            android:hint="Type a message..." style="@style/VarunaInputLayout"
+            android:layout_marginEnd="8dp">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_message"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:maxLines="3" android:inputType="textMultiLine" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_send" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:src="@android:drawable/ic_menu_send"
+            app:backgroundTint="@color/colorPrimary" app:fabSize="normal" />
+    </LinearLayout>
+</LinearLayout>

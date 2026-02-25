@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Varuna</string>
+    <string name="app_tagline">Smart Water Quality Monitoring</string>
+
+    <!-- Navigation -->
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <!-- Auth -->
+    <string name="login">Login</string>
+    <string name="signup">Sign Up</string>
+    <string name="email">Email Address</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="full_name">Full Name</string>
+    <string name="village_location">Village / Location</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="dont_have_account">Don\'t have an account? Sign Up</string>
+    <string name="already_have_account">Already have an account? Login</string>
+
+    <!-- Water Quality -->
+    <string name="water_quality_title">Water Quality Analysis</string>
+    <string name="enter_parameters">Enter Water Parameters</string>
+    <string name="ph_label">pH Value</string>
+    <string name="tds_label">TDS (mg/L)</string>
+    <string name="turbidity_label">Turbidity (NTU)</string>
+    <string name="hardness_label">Hardness (mg/L)</string>
+    <string name="temperature_label">Temperature (°C)</string>
+    <string name="chloride_label">Chloride (mg/L)</string>
+    <string name="do_label">Dissolved Oxygen (mg/L)</string>
+    <string name="predict_wqi">Analyze Water Quality</string>
+    <string name="wqi_result">WQI Score</string>
+
+    <!-- Disease Risk -->
+    <string name="disease_risk_title">Disease Risk Prediction</string>
+    <string name="predict_risk">Predict Disease Risk</string>
+
+    <!-- Dashboard -->
+    <string name="dashboard_title">Dashboard</string>
+    <string name="current_status">Current Status</string>
+    <string name="wqi_trend">WQI Trend (Last 7 Days)</string>
+    <string name="recent_alerts">Recent Alerts</string>
+    <string name="disease_risk_summary">Disease Risk Summary</string>
+
+    <!-- Reports -->
+    <string name="generate_report">Generate PDF Report</string>
+    <string name="share_report">Share Report</string>
+    <string name="download_report">Download Report</string>
+
+    <!-- Alerts -->
+    <string name="no_alerts">No alerts yet. Keep monitoring!</string>
+    <string name="alert_type_water">Water Quality Alert</string>
+    <string name="alert_type_disease">Disease Risk Alert</string>
+    <string name="alert_type_emergency">Emergency Alert</string>
+
+    <!-- Education -->
+    <string name="who_guidelines">WHO Guidelines</string>
+    <string name="bis_standards">BIS Standards</string>
+    <string name="disease_info">Disease Information</string>
+    <string name="purification_methods">Purification Methods</string>
+
+    <!-- Help -->
+    <string name="help_title">Help &amp; Requests</string>
+    <string name="submit_request">Submit Request</string>
+    <string name="describe_issue">Describe the issue...</string>
+
+    <!-- Status Labels -->
+    <string name="status_safe">SAFE</string>
+    <string name="status_moderate">MODERATE</string>
+    <string name="status_unsafe">UNSAFE</string>
+    <string name="risk_low">Low Risk</string>
+    <string name="risk_medium">Medium Risk</string>
+    <string name="risk_high">HIGH RISK</string>
+
+    <!-- Chatbot -->
+    <string name="chatbot_title">Varuna AI Advisor</string>
+    <string name="type_message">Type a message...</string>
+</resources>

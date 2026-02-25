@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp"
+            android:layout_marginBottom="16dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="16dp"
+                android:background="#FF6F00">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="🦠 Disease Risk Prediction" android:textColor="#FFFFFF"
+                    android:textSize="18sp" android:textStyle="bold" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="ML-based risk prediction for Cholera, Typhoid, Diarrhea"
+                    android:textColor="#B3FFFFFF" android:textSize="12sp" android:layout_marginTop="4dp" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!-- Village Name -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:hint="Village / Location" style="@style/VarunaInputLayout"
+            android:layout_marginBottom="12dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_village" android:layout_width="match_parent"
+                android:layout_height="wrap_content" android:inputType="textCapWords" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Input Parameters -->
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="pH Value" style="@style/VarunaInputLayout"
+            android:layout_marginBottom="10dp">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_ph"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="TDS (mg/L)" style="@style/VarunaInputLayout"
+            android:layout_marginBottom="10dp">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_tds"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="Turbidity (NTU)" style="@style/VarunaInputLayout"
+            android:layout_marginBottom="10dp">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_turbidity"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="Temperature (°C)" style="@style/VarunaInputLayout"
+            android:layout_marginBottom="10dp">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_temperature"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+            android:layout_height="wrap_content" android:hint="Reported Health Cases (count)"
+            style="@style/VarunaInputLayout" android:layout_marginBottom="16dp">
+            <com.google.android.material.textfield.TextInputEditText android:id="@+id/et_health_cases"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="16dp">
+            <Button android:id="@+id/btn_load_from_latest" style="@style/VarunaButtonOutlined"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:text="📥 Load Latest" android:layout_marginEnd="8dp" />
+            <Button android:id="@+id/btn_predict_risk" style="@style/VarunaButton"
+                android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="2"
+                android:text="🔬 Predict Risk" />
+        </LinearLayout>
+
+        <ProgressBar android:id="@+id/progress_bar" android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_gravity="center"
+            android:visibility="gone" android:layout_marginBottom="16dp" />
+
+        <!-- High Risk Banner -->
+        <androidx.cardview.widget.CardView android:id="@+id/banner_high_risk"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            app:cardCornerRadius="8dp" app:cardBackgroundColor="#FFCDD2"
+            android:visibility="gone" android:layout_marginBottom="12dp">
+            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:text="🚨 HIGH DISEASE RISK DETECTED! Authorities have been notified. Take immediate action."
+                android:textColor="#B71C1C" android:textStyle="bold" android:textSize="14sp"
+                android:padding="16dp" android:gravity="center" />
+        </androidx.cardview.widget.CardView>
+
+        <!-- Risk Results Card -->
+        <androidx.cardview.widget.CardView android:id="@+id/card_risk_result"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            app:cardCornerRadius="12dp" app:cardElevation="6dp"
+            android:visibility="gone" android:layout_marginBottom="12dp">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="20dp">
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="🦠 Disease Risk Results" android:textSize="18sp"
+                    android:textStyle="bold" android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="16dp" />
+
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="horizontal" android:layout_marginBottom="12dp">
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center"
+                        android:padding="8dp" android:background="#FFF3E0"
+                        android:layout_marginEnd="8dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Cholera" android:textSize="12sp"
+                            android:textColor="@color/colorTextSecondary" />
+                        <TextView android:id="@+id/tv_cholera_risk"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="--" android:textSize="18sp" android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center"
+                        android:padding="8dp" android:background="#FFF3E0"
+                        android:layout_marginEnd="8dp">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Typhoid" android:textSize="12sp"
+                            android:textColor="@color/colorTextSecondary" />
+                        <TextView android:id="@+id/tv_typhoid_risk"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="--" android:textSize="18sp" android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+                        android:layout_weight="1" android:orientation="vertical" android:gravity="center"
+                        android:padding="8dp" android:background="#FFF3E0">
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="Diarrhea" android:textSize="12sp"
+                            android:textColor="@color/colorTextSecondary" />
+                        <TextView android:id="@+id/tv_diarrhea_risk"
+                            android:layout_width="wrap_content" android:layout_height="wrap_content"
+                            android:text="--" android:textSize="18sp" android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:text="🛡️ Prevention Guidelines" android:textSize="15sp"
+                    android:textStyle="bold" android:textColor="@color/colorPrimary"
+                    android:layout_marginBottom="8dp" />
+
+                <TextView android:id="@+id/tv_prevention_guidelines"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:textSize="13sp" android:lineSpacingExtra="4dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,94 @@
+# QUICK UPDATE CHECKLIST
+
+## Files to Update (in exact order):
+
+### 1. gradle/wrapper/gradle-wrapper.properties
+- Location: `YourProject/gradle/wrapper/gradle-wrapper.properties`
+- Copy content from: `IndividualFiles/gradle-wrapper.properties`
+
+### 2. build.gradle (ROOT)
+- Location: `YourProject/build.gradle`
+- Copy content from: `IndividualFiles/build.gradle`
+
+### 3. settings.gradle
+- Location: `YourProject/settings.gradle`
+- Copy content from: `IndividualFiles/settings.gradle`
+
+### 4. gradle.properties
+- Location: `YourProject/gradle.properties`
+- Copy content from: `IndividualFiles/gradle.properties`
+
+### 5. app/build.gradle (MODULE)
+- Location: `YourProject/app/build.gradle`
+- Copy content from: `IndividualFiles/app_build.gradle`
+
+### 6. app/proguard-rules.pro
+- Location: `YourProject/app/proguard-rules.pro`
+- Copy content from: `IndividualFiles/proguard-rules.pro`
+
+---
+
+## After Copying All Files:
+
+1. **Close Android Studio**
+2. **Delete these folders** in your project:
+   - `.gradle/`
+   - `.idea/`
+   - `app/build/`
+   - `build/`
+3. **Reopen Android Studio**
+4. **File → Invalidate Caches → Invalidate and Restart**
+5. **Wait for Gradle sync** (takes 2-5 minutes)
+6. **Build → Rebuild Project**
+7. **Run the app**
+
+---
+
+## What Each File Does:
+
+| File | Purpose |
+|------|---------|
+| `gradle-wrapper.properties` | Tells Gradle which version to download (8.6) |
+| `build.gradle` (root) | Sets plugin versions for entire project |
+| `settings.gradle` | Configures where Gradle downloads dependencies |
+| `gradle.properties` | Memory settings and feature flags |
+| `app/build.gradle` | All app dependencies and Android config |
+| `proguard-rules.pro` | Code shrinking rules for release builds |
+
+---
+
+## File Location Map:
+
+```
+YourProject/
+├── gradle/
+│   └── wrapper/
+│       └── gradle-wrapper.properties    ← UPDATE THIS
+├── app/
+│   ├── build.gradle                     ← UPDATE THIS (module level)
+│   └── proguard-rules.pro               ← UPDATE THIS
+├── build.gradle                         ← UPDATE THIS (root level)
+├── settings.gradle                      ← UPDATE THIS
+└── gradle.properties                    ← UPDATE THIS
+```
+
+---
+
+## Copy-Paste Order (Step-by-Step):
+
+1. Open `YourProject/gradle/wrapper/gradle-wrapper.properties`
+2. Select ALL (Ctrl+A), Delete
+3. Open downloaded `IndividualFiles/gradle-wrapper.properties`
+4. Copy ALL (Ctrl+A, Ctrl+C)
+5. Paste into your file (Ctrl+V)
+6. Save (Ctrl+S)
+7. **Repeat for all 6 files**
+
+---
+
+## Critical Notes:
+
+- **Do NOT skip any file** — all 6 must be updated
+- **Do NOT mix versions** — use exactly the versions specified
+- **Delete `.gradle` folder** after updating to force fresh sync
+- If you have **retrofit** or **tensorflow-lite** in dependencies, **DELETE those lines**
