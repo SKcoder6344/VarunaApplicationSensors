@@ -1,3 +1,4 @@
+> Forked from [sajaljain7925/VarunaApplicationSensors](https://github.com/sajaljain7925/VarunaApplicationSensors) — extended with hardware sensor integration.
 # Varuna Water Quality Monitoring App
 
 ## Quick Start (3 Steps)
